@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/bhuvi819381/Social-Media-Dashboard]
-- Live Site URL: [Add live site URL here]
+- Live Site URL: [socialmediadashboard01.netlify.app]
 
 ## My process
 
