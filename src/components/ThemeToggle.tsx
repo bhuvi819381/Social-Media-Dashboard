@@ -4,11 +4,21 @@ const ThemeToggle = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+  }, []);
+
+  useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
-    <div className="flex justify-between border-t md:border-t-0 py-3 md:items-center md:justify-center md:space-x-3 md:text-sm">
+    <div className="flex justify-between border-t py-3 md:items-center md:justify-center md:space-x-3 md:border-t-0 md:text-sm">
       <span className="">
         {theme === "light" ? <p>Dark Mode</p> : <p>Light Mode</p>}
       </span>
