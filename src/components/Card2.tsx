@@ -1,3 +1,5 @@
+import {motion} from 'motion/react'
+
 type Card2Props = {
   title: string;
   icon: string;
@@ -16,7 +18,12 @@ const Card2 = ({
   color,
 }: Card2Props) => {
   return (
-    <div className="">
+    <motion.div
+    initial={{ opacity: 0, y: 30}}
+    animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+     whileTap={{ scale: 0.95 }}
+    whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}
+    >
 
       <div className="bg-Card-BG flex w-[255px] flex-col justify-between rounded-md p-6 gap-5">
         {/* Top row */}
@@ -34,7 +41,7 @@ const Card2 = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

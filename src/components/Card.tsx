@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 type CardProps = {
   icon: string;
   title: string;
@@ -18,8 +20,12 @@ const Card = ({
   textColor,
 }: CardProps) => {
   return (
-    <div
+    <motion.div
       className={`bg-Card-BG w-[255px] border-t-5 ${borderTop} flex flex-col items-center justify-center gap-4 rounded-md p-4 text-center`}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+      whileHover={{ scale: 1.05 , boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}
+
     >
       <div className="flex items-center justify-center gap-2">
         <span>
@@ -34,7 +40,7 @@ const Card = ({
 
         <p className={`${textColor} font-bold`}>{change} Today</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Card;
