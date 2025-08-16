@@ -19,10 +19,12 @@ const Card2 = ({
 }: Card2Props) => {
   return (
     <motion.div
-    initial={{ opacity: 0, y: 30}}
-    animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-     whileTap={{ scale: 0.95 }}
-    whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}
+    variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+      }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.9 }}
     >
 
       <div className="bg-Card-BG flex w-[255px] flex-col justify-between rounded-md p-6 gap-5">
